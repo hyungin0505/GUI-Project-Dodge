@@ -13,7 +13,6 @@ from scenes.main_screen import main_page_init
 from utils import *
 from core.exit import esc_key_input
 from core.game import game_start
-from core.debugger import d_print
 
 w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 
