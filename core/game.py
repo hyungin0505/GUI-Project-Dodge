@@ -1,21 +1,10 @@
 import random
 
 from core.button import check_play_button_clicked
-from core.debugger import d_print
-from gui.enemy import Enemy
-from utils import config
+from core.enemy import make_enemy
 
-
-def game_start(w):
+def game_start(w, enemies):
     check_play_button_clicked(w)
 
-    enemies = []
-    if config.game_started == 1:
-        if random.randint(0, 10-config.enemy_spawn_tick) == 0:
-            enemies.append(Enemy(w))
-            config.enemy_count += 1
+    make_enemy(w, enemies)
 
-    if config.enemy_count == config.difficulty:
-        config.enemy_spawn_tick += 1
-        config.difficulty *= 2
-        d_print("[Game Config Update] Enemy Spawn Tick: {}, Difficlty: {}".format(config.enemy_spawn_tick, config.difficulty))

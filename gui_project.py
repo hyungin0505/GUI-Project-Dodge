@@ -18,19 +18,23 @@ from core.game import game_start
 w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 
 def initialize(timestamp):
+    global enemies
+
     main_page_init(w)
     game_player_init(w)
+    enemies = []
 
     pass
 
 
 def update(timestamp):
+    global enemies
     '''
     여러 줄짜리
     설명 메시지
     '''
     esc_key_input(w)
-    game_start(w)
+    game_start(w, enemies)
 
     pass
 
