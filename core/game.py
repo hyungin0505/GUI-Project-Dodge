@@ -8,8 +8,6 @@ from utils import config
 
 def game_start(w):
     check_play_button_clicked(w)
-    if config.game_started == 1:
-        w.showObject(w.data.image_game_player)
 
     enemies = []
     if config.game_started == 1:

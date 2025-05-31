@@ -8,3 +8,4 @@ def check_play_button_clicked(w):
             d_print("Game Play Button Clicked.")
             w.hideObject(w.data.image_main_button_play)
             config.game_started = 1
+        w.showObject(w.data.image_game_player)
