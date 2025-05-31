@@ -7,6 +7,9 @@ from core import player
 def game_start(w, enemies):
     check_play_button_clicked(w)
 
+    player.move(w)
+
     make_enemy(w, enemies)
 
-    player.move(w)
+    for e in enemies:
+        e.move(w, enemies)
