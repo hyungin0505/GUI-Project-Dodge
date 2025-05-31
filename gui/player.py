@@ -1,5 +1,3 @@
-from utils.config import game_started
-
 def game_player_init(w):
     w.data.image_game_player = w.newImage(
         x = (1200-32)/2-16,
