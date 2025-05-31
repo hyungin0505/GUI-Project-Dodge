@@ -10,6 +10,7 @@ gui 모듈을 사용하기 위한 기본 구조를 미리 적어 둔 파일입�
 
 import gui_core as gui
 from scenes.main_screen import main_page_init
+from scenes.ingame import game_player_init
 from utils import *
 from core.exit import esc_key_input
 from core.game import game_start
@@ -18,6 +19,7 @@ w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 
 def initialize(timestamp):
     main_page_init(w)
+    game_player_init(w)
 
     pass
 
