@@ -13,6 +13,7 @@ def play(w):
                 <= w.getPosition(w.data.play_button)[1] + w.getSize(w.data.play_button)[1]
         ) and  not config.game_started:
             w.hideObject(w.data.play_button)
+            w.hideObject(w.data.logo)
             config.game_started = True
             w.showObject(w.data.player)
             d_print("Game Play Button Clicked.")
