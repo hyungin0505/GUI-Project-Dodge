@@ -1,5 +1,5 @@
-def game_player_init(w):
-    w.data.image_game_player = w.newImage(
+def init(w):
+    w.data.player = w.newImage(
         x = (1200-32)/2,
         y = (800-32)/2,
         filename = './assets/images/player.png',

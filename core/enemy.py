@@ -4,9 +4,8 @@ from core.debugger import d_print
 from gui.enemy import Enemy
 from utils import config
 
-
-def make_enemy(w, enemies):
-    if config.game_started == 1:
+def generate(w, enemies):
+    if config.game_started:
         if random.randint(0, 10-config.enemy_spawn_tick) == 0:
             enemies.append(Enemy(w))
             config.enemy_count += 1

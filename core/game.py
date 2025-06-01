@@ -1,15 +1,12 @@
-import random
+from core import player, enemy, button
+from utils.config import game_started
 
-from core.button import check_play_button_clicked
-from core.enemy import make_enemy
-from core import player
 
-def game_start(w, enemies):
-    check_play_button_clicked(w)
+def start(w, enemies):
+    if not game_started:
+        button.play(w)
 
     player.move(w)
-
-    make_enemy(w, enemies)
-
+    enemy.generate(w, enemies)
     for e in enemies:
         e.move(w, enemies)

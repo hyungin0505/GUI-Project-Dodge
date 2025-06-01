@@ -1,13 +1,12 @@
 import random
-import time
-
-from utils import *
+from utils import config
 from core.debugger import d_print
-from utils.config import difficulty, player_speed, game_started
-from core.math import *
+from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT
+from math import sqrt
+from core import logic
 
 class Enemy:
-    def __init__(self, w, x=0, y=0, speed=player_speed):
+    def __init__(self, w, x=0, y=0, speed=config.player_speed):
         self.x = x
         self.y = y
         self.speed = speed
@@ -16,19 +15,16 @@ class Enemy:
         if edge == 'top':
             self.x = random.randint(0-16, SCREEN_WIDTH)
             self.y = 0-16
-            d_print("[Enemy Spawned] Enemy is on top. ({}, {})".format(self.x, self.y))
         elif edge == 'bottom':
             self.x = random.randint(0-16, SCREEN_WIDTH)
             self.y = SCREEN_HEIGHT
-            d_print("[Enemy Spawned] Enemy is on bottom. ({}, {})".format(self.x, self.y))
         elif edge == 'left':
             self.x = 0-16
             self.y = random.randint(0-16, SCREEN_HEIGHT)
-            d_print("[Enemy Spawned] Enemy is on left. ({}, {})".format(self.x, self.y))
         elif edge == 'right':
             self.x = SCREEN_WIDTH
             self.y = random.randint(0-16, SCREEN_HEIGHT)
-            d_print("[Enemy Spawned] Enemy is on right. ({}, {})".format(self.x, self.y))
+        d_print("[Enemy Spawned] Enemy is on {}. ({}, {})".format(edge, self.x, self.y))
 
         self.image = w.newImage(
             x=self.x,
@@ -40,30 +36,13 @@ class Enemy:
             isPixelwiseModifiable=False,
         )
 
-        if config.enemy_target_player:
-            dx = w.getPosition(w.data.image_game_player)[0] - w.getPosition(self.image)[0]
-            dy = w.getPosition(w.data.image_game_player)[1] - w.getPosition(self.image)[1]
-        else:
-            dx = w.getPosition(w.data.image_game_player)[0] - w.getPosition(self.image)[0] + random.randint(-100, 100)
-            dy = w.getPosition(w.data.image_game_player)[1] - w.getPosition(self.image)[1] + random.randint(-100, 100)
+        target_offset = 0 if config.enemy_target_player else random.randint(-100, 100)
+        dx = w.getPosition(w.data.player)[0] - w.getPosition(self.image)[0] + target_offset
+        dy = w.getPosition(w.data.player)[1] - w.getPosition(self.image)[1] + target_offset
 
         distance = sqrt(dx * dx + dy * dy)
-        self.speed_x = (dx/distance)*player_speed
-        self.speed_y = (dy/distance)*player_speed
-
-    def is_colliding(self, enemy, player):
-        x1, y1 = enemy
-        x2, y2 = player
-
-        length1 = 16-3
-        length2 = 32-3
-
-        if (x1 < x2 + length2 and
-            x1 + length1 > x2 and
-            y1 < y2 + length2 and
-            y1 + length1 > y2):
-            return True
-        return False
+        self.speed_x = (dx/distance)*config.player_speed
+        self.speed_y = (dy/distance)*config.player_speed
 
     def move(self, w, enemies):
         new_x = w.getPosition(self.image)[0] + self.speed_x
@@ -76,9 +55,9 @@ class Enemy:
             w.deleteObject(self.image)
             d_print("[Enemy Event] Enemy Deleted")
 
-        if self.is_colliding(w.getPosition(self.image), w.getPosition(w.data.image_game_player)):
+        if logic.is_colliding(self, w.getPosition(self.image), w.getPosition(w.data.player)):
             w.showObject(w.data.game_over)
-            w.hideObject(w.data.image_game_player)
+            w.hideObject(w.data.player)
             w.raiseObject(w.data.game_over)
             d_print("Game Over")
             w.setTitle("Game Over... Enemies: {}".format(config.enemy_count))

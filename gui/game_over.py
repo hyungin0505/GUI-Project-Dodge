@@ -1,6 +1,4 @@
-from utils import SCREEN_WIDTH, SCREEN_HEIGHT
-
-def game_over_init(w):
+def init(w):
     w.data.game_over = w.newImage(
         x = (1200-480)/2,
         y = (800-128)/2,
