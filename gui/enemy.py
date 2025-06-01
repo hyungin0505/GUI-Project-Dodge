@@ -1,7 +1,9 @@
 import random
+import time
+
 from utils import *
 from core.debugger import d_print
-from utils.config import difficulty, player_speed
+from utils.config import difficulty, player_speed, game_started
 from core.math import *
 
 class Enemy:
@@ -49,6 +51,19 @@ class Enemy:
         self.speed_x = (dx/distance)*player_speed
         self.speed_y = (dy/distance)*player_speed
 
+    def is_colliding(self, enemy, player):
+        x1, y1 = enemy
+        x2, y2 = player
+
+        length1 = 16-3
+        length2 = 32-3
+
+        if (x1 < x2 + length2 and
+            x1 + length1 > x2 and
+            y1 < y2 + length2 and
+            y1 + length1 > y2):
+            return True
+        return False
 
     def move(self, w, enemies):
         new_x = w.getPosition(self.image)[0] + self.speed_x
@@ -60,5 +75,13 @@ class Enemy:
             enemies.remove(self)
             w.deleteObject(self.image)
             d_print("[Enemy Event] Enemy Deleted")
+
+        if self.is_colliding(w.getPosition(self.image), w.getPosition(w.data.image_game_player)):
+            w.showObject(w.data.game_over)
+            w.hideObject(w.data.image_game_player)
+            w.raiseObject(w.data.game_over)
+            d_print("Game Over")
+            w.setTitle("Game Over... Enemies: {}".format(config.enemy_count))
+            config.game_started = 0
 
         d_print("[Enemy Moved] Enemy Moved to ({}, {})".format(self.x, self.y))

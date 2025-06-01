@@ -9,6 +9,7 @@ gui 모듈을 사용하기 위한 기본 구조를 미리 적어 둔 파일입�
 '''
 
 import gui_core as gui
+from gui.game_over import game_over_init
 from scenes.main_screen import main_page_init
 from gui.player import game_player_init
 from utils import *
@@ -22,6 +23,7 @@ def initialize(timestamp):
 
     main_page_init(w)
     game_player_init(w)
+    game_over_init(w)
     enemies = []
 
     pass
