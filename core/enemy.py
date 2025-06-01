@@ -1,7 +1,7 @@
 import random
 
 from core.debugger import d_print
-from gui.enemy import Enemy
+from gui.enemy_sprite import Enemy
 from utils import config
 
 def generate(w, enemies):

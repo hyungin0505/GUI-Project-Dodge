@@ -9,7 +9,7 @@ gui 모듈을 사용하기 위한 기본 구조를 미리 적어 둔 파일입�
 '''
 import gui_core as gui
 from scenes import main_screen
-from gui import player, game_over
+from gui import player_sprite, game_over_sprite
 from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from core import game, keyboard
 
@@ -29,7 +29,7 @@ def initialize(timestamp):
 def update(timestamp):
     global enemies
     '''
-    여러 줄짜리
+    여러 줄짜
     설명 메시지
     '''
     keyboard.esc_input(w)

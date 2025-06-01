@@ -1,4 +1,4 @@
-from gui import background, play_button
+from gui import background_sprite, play_button_sprite
 
 def init(w):
     background.init(w)
