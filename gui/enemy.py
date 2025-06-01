@@ -14,20 +14,20 @@ class Enemy:
 
         edge = random.choice(['top', 'bottom', 'left', 'right'])
         if edge == 'top':
-            self.x = random.randint(0-8, SCREEN_WIDTH-8)
-            self.y = 0-8
+            self.x = random.randint(0-16, SCREEN_WIDTH)
+            self.y = 0-16
             d_print("[Enemy Spawned] Enemy is on top. ({}, {})".format(self.x, self.y))
         elif edge == 'bottom':
-            self.x = random.randint(0-8, SCREEN_WIDTH-8)
-            self.y = SCREEN_HEIGHT-8
+            self.x = random.randint(0-16, SCREEN_WIDTH)
+            self.y = SCREEN_HEIGHT
             d_print("[Enemy Spawned] Enemy is on bottom. ({}, {})".format(self.x, self.y))
         elif edge == 'left':
-            self.x = 0-8
-            self.y = random.randint(0-8, SCREEN_HEIGHT-8)
+            self.x = 0-16
+            self.y = random.randint(0-16, SCREEN_HEIGHT)
             d_print("[Enemy Spawned] Enemy is on left. ({}, {})".format(self.x, self.y))
         elif edge == 'right':
-            self.x = SCREEN_WIDTH-8
-            self.y = random.randint(0-8, SCREEN_HEIGHT-8)
+            self.x = SCREEN_WIDTH
+            self.y = random.randint(0-16, SCREEN_HEIGHT)
             d_print("[Enemy Spawned] Enemy is on right. ({}, {})".format(self.x, self.y))
 
         self.image = w.newImage(
@@ -83,5 +83,3 @@ class Enemy:
             d_print("Game Over")
             w.setTitle("Game Over... Enemies: {}".format(config.enemy_count))
             config.game_started = 0
-
-        d_print("[Enemy Moved] Enemy Moved to ({}, {})".format(self.x, self.y))
