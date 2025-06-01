@@ -2,25 +2,7 @@ import random
 from utils import *
 from core.debugger import d_print
 from utils.config import difficulty, player_speed
-
-def abs(x):
-    return x if x >= 0 else -x
-
-def sqrt(x, tolerance=1e-15, max_iterations=100):
-    if x < 0:
-        raise ValueError("math domain error")
-
-    if x == 0:
-        return 0.0
-
-    guess = x / 2.0
-    for _ in range(max_iterations):
-        new_guess = 0.5 * (guess + x / guess)
-        if abs(new_guess - guess) < tolerance:
-            return new_guess
-        guess = new_guess
-
-    return guess
+from core.math import *
 
 class Enemy:
     def __init__(self, w, x=0, y=0, speed=player_speed):
@@ -55,8 +37,14 @@ class Enemy:
             isVisible=True,
             isPixelwiseModifiable=False,
         )
-        dx = w.getPosition(w.data.image_game_player)[0] - w.getPosition(self.image)[0]
-        dy = w.getPosition(w.data.image_game_player)[1] - w.getPosition(self.image)[1]
+
+        if config.enemy_target_player:
+            dx = w.getPosition(w.data.image_game_player)[0] - w.getPosition(self.image)[0]
+            dy = w.getPosition(w.data.image_game_player)[1] - w.getPosition(self.image)[1]
+        else:
+            dx = w.getPosition(w.data.image_game_player)[0] - w.getPosition(self.image)[0] + random.randint(-100, 100)
+            dy = w.getPosition(w.data.image_game_player)[1] - w.getPosition(self.image)[1] + random.randint(-100, 100)
+
         distance = sqrt(dx * dx + dy * dy)
         self.speed_x = (dx/distance)*player_speed
         self.speed_y = (dy/distance)*player_speed
