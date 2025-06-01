@@ -19,8 +19,8 @@ def initialize(timestamp):
     global enemies
 
     main_screen.init(w)
-    player.init(w)
-    game_over.init(w)
+    player_sprite.init(w)
+    game_over_sprite.init(w)
     enemies = []
 
     pass

@@ -29,7 +29,7 @@ class Enemy:
         self.image = w.newImage(
             x=self.x,
             y=self.y,
-            filename='./assets/images/enemy1.png',
+            filename='./assets/images/enemies/enemy1.png',
             new_width=16,
             new_height=16,
             isVisible=True,
