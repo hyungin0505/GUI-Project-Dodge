@@ -1,9 +1,16 @@
 from core import player, enemy, button
-from utils.config import game_started
+from core.debugger import d_print
+from utils import config
 
+def init(w):
+    w.hideObject(w.data.play_button)
+    w.hideObject(w.data.logo)
+    config.game_started = True
+    w.showObject(w.data.player)
+    d_print("Game Play Started")
 
 def start(w, enemies):
-    if not game_started:
+    if not config.game_started:
         button.play(w)
 
     player.move(w)

@@ -1,4 +1,5 @@
 from core.debugger import d_print
+from core import game, keyboard
 from utils import config
 
 def play(w):
@@ -12,8 +13,5 @@ def play(w):
                 <= w.mouse_position_y
                 <= w.getPosition(w.data.play_button)[1] + w.getSize(w.data.play_button)[1]
         ) and  not config.game_started:
-            w.hideObject(w.data.play_button)
-            w.hideObject(w.data.logo)
-            config.game_started = True
-            w.showObject(w.data.player)
-            d_print("Game Play Button Clicked.")
+            game.init(w)
+    keyboard.enter_input(w)
