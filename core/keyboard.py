@@ -1,5 +1,5 @@
 from core import game
-
+from utils import config
 
 def esc_input(w):
     if w.keys['Escape']:
@@ -7,6 +7,6 @@ def esc_input(w):
     return
 
 def enter_input(w):
-    if w.keys['Return']:
+    if w.keys['Return'] and config.game_started == 0:
         game.init(w)
     return

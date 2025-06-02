@@ -60,4 +60,4 @@ class Enemy:
             w.hideObject(w.data.player)
             w.raiseObject(w.data.game_over)
             w.setTitle("Game Over... Enemies: {}".format(config.enemy_count))
-            config.game_started = 0
+            config.game_started = 2
