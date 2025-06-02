@@ -10,7 +10,7 @@ def init(w):
     d_print("Game Play Started")
 
 def start(w, enemies):
-    if not config.game_started:
+    if config.game_started == 0 or config.game_started == 2:
         button.play(w)
 
     player.move(w)
