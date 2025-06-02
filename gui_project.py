@@ -17,21 +17,20 @@ w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 
 def initialize(timestamp):
     global enemies
-
+    enemies = []
     main_screen.init(w)
     player_sprite.init(w)
     game_over_sprite.init(w)
-    enemies = []
 
     pass
 
 
 def update(timestamp):
-    global enemies
     '''
     여러 줄짜
     설명 메시지
     '''
+    global enemies
     keyboard.esc_input(w)
     game.start(w, enemies)
 

@@ -4,7 +4,7 @@ from utils.config import player_speed, SCREEN_WIDTH, SCREEN_HEIGHT
 
 
 def move(w):
-    if config.game_started:
+    if config.game_started == 1:
         x, y = w.getPosition(w.data.player)
 
         if w.keys['w'] and not w.keys['s']:
