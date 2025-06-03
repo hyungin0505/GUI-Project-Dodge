@@ -2,6 +2,7 @@ SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 800
 COLLIDE_CORRECTION_VALUE = 3
 DEBUGGING = True
+GOD_MODE = True
 
 game_started = 0
 difficulty = 10

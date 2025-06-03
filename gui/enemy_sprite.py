@@ -55,7 +55,7 @@ class Enemy:
             w.deleteObject(self.image)
             d_print("[Enemy Event] Enemy Deleted")
 
-        if logic.is_colliding(self, w.getPosition(self.image), w.getPosition(w.data.player)):
+        if logic.is_colliding(self, w.getPosition(self.image), w.getPosition(w.data.player)) and config.GOD_MODE != True:
             w.showObject(w.data.game_over)
             w.hideObject(w.data.player)
             w.raiseObject(w.data.game_over)
