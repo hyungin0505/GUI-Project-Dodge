@@ -2,7 +2,7 @@ from core.debugger import d_print
 from utils.config import COLLIDE_CORRECTION_VALUE
 
 
-def is_colliding(self, enemy, player):
+def is_collided(self, enemy, player):
     x1, y1 = enemy
     x2, y2 = player
 
