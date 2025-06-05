@@ -1,7 +1,7 @@
 import random
 from utils import config
 from core.debugger import d_print
-from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT
+from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT
 from math import sqrt
 from core import logic
 
@@ -30,8 +30,8 @@ class Enemy:
             x=self.x,
             y=self.y,
             filename='./assets/images/enemies/enemy1.png',
-            new_width=16,
-            new_height=16,
+            new_width=ENEMY_WIDTH,
+            new_height=ENEMY_HEIGHT,
             isVisible=True,
             isPixelwiseModifiable=False,
         )
