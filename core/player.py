@@ -1,6 +1,6 @@
 from core.debugger import d_print
 from utils import config
-from utils.config import player_speed, SCREEN_WIDTH, SCREEN_HEIGHT
+from utils.config import PLAYER_SPEED, SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_HEIGHT, PLAYER_WIDTH
 
 
 def move(w):

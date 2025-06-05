@@ -1,12 +1,12 @@
 import random
 from utils import config
 from core.debugger import d_print
-from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT
+from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT, PLAYER_TARGET_RANGE, ENEMY_TARGET_PLAYER, PLAYER_SPEED, GOD_MODE
 from math import sqrt
 from core import logic
 
 class Enemy:
-    def __init__(self, w, x=0, y=0, speed=config.player_speed):
+    def __init__(self, w, x=0, y=0, speed=config.PLAYER_SPEED):
         self.x = x
         self.y = y
         self.speed = speed
@@ -36,13 +36,13 @@ class Enemy:
             isPixelwiseModifiable=False,
         )
 
-        target_offset = 0 if config.enemy_target_player else random.randint(-100, 100)
+        target_offset = 0 if ENEMY_TARGET_PLAYER else random.randint(-PLAYER_TARGET_RANGE, PLAYER_TARGET_RANGE)
         dx = w.getPosition(w.data.player)[0] - w.getPosition(self.image)[0] + target_offset
         dy = w.getPosition(w.data.player)[1] - w.getPosition(self.image)[1] + target_offset
 
         distance = sqrt(dx * dx + dy * dy)
-        self.speed_x = (dx/distance)*config.player_speed
-        self.speed_y = (dy/distance)*config.player_speed
+        self.speed_x = (dx/distance)*PLAYER_SPEED
+        self.speed_y = (dy/distance)*PLAYER_SPEED
 
     def move(self, w, enemies):
         new_x = w.getPosition(self.image)[0] + self.speed_x
