@@ -50,7 +50,7 @@ class Enemy:
 
         w.moveObject(self.image,new_x=new_x,new_y=new_y)
 
-        if -32 > w.getPosition(self.image)[0] or w.getPosition(self.image)[0] > SCREEN_WIDTH + 32 or -32 > w.getPosition(self.image)[1] or w.getPosition(self.image)[1] > SCREEN_HEIGHT + 32:
+        if -ENEMY_WIDTH > w.getPosition(self.image)[0] or w.getPosition(self.image)[0] > SCREEN_WIDTH + ENEMY_WIDTH or -ENEMY_HEIGHT > w.getPosition(self.image)[1] or w.getPosition(self.image)[1] > SCREEN_HEIGHT + ENEMY_HEIGHT:
             enemies.remove(self)
             w.deleteObject(self.image)
             d_print("[Enemy Event] Enemy Deleted")

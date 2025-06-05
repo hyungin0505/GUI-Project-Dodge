@@ -1,8 +1,11 @@
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 800
-COLLIDE_CORRECTION_VALUE = 3
+
 DEBUGGING = True
-GOD_MODE = True
+GOD_MODE = False
+
+ENEMY_TARGET_PLAYER = False
+PLAYER_TARGET_RANGE = 100
 
 LOGO_WIDTH = 340
 LOGO_HEIGHT = 250
@@ -15,13 +18,14 @@ GAME_OVER_HEIGHT = 128
 
 PLAYER_WIDTH = 32
 PLAYER_HEIGHT = 32
+PLAYER_SPEED = 8
 
 ENEMY_WIDTH = 16
 ENEMY_HEIGHT = 16
 
+COLLIDE_CORRECTION_VALUE = 3
+
 game_started = 0
 difficulty = 10
-player_speed = 8
 enemy_count = 0
 enemy_spawn_tick = 1
-enemy_target_player = False
