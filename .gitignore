@@ -1,5 +1,6 @@
 piskel/
 .idea/
+gui_core.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
