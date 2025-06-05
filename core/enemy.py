@@ -5,8 +5,8 @@ from gui.enemy_sprite import Enemy
 from utils import config
 
 def generate(w, enemies):
-    if config.game_started == 1 and config.enemy_spawn_tick != 10:
-        if random.randint(0, 10-config.enemy_spawn_tick) == 0:
+    if config.game_started == 1:
+        if config.enemy_spawn_tick >= 10 or random.randint(0, 10-config.enemy_spawn_tick) == 0:
             enemies.append(Enemy(w))
             config.enemy_count += 1
             w.setTitle("Avoid Enemies!! Enemies: {}".format(config.enemy_count))
