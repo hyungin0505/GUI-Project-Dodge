@@ -9,7 +9,10 @@ def generate(w, enemies):
         if config.enemy_spawn_tick >= 10 or random.randint(0, 10-config.enemy_spawn_tick) == 0:
             enemies.append(Enemy(w))
             config.enemy_count += 1
-            w.setTitle("Avoid Enemies!! Enemies: {}".format(config.enemy_count))
+            if not config.god_mode:
+                w.setTitle("Avoid Enemies!! Enemies: {}".format(config.enemy_count))
+            else:
+                w.setTitle("GOD Mode On.. Enemies: {}".format(config.enemy_count))
 
     if config.enemy_count >= config.difficulty:
         if config.enemy_spawn_tick < 10:

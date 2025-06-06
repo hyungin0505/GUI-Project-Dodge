@@ -1,6 +1,7 @@
 from core.debugger import d_print
 from utils import config
 from utils.config import PLAYER_SPEED, SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_HEIGHT, PLAYER_WIDTH
+from core import keyboard
 
 
 def move(w):
@@ -33,3 +34,4 @@ def move(w):
             d_print("[Player Moved] Player is to ({}, {}).".format(x, y))
 
         w.moveObject(w.data.player, new_x=x, new_y=y)
+        keyboard.cheat_input(w)
