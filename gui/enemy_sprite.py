@@ -1,7 +1,7 @@
 import random
 from utils import config
 from core.debugger import d_print
-from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT, PLAYER_TARGET_RANGE, ENEMY_TARGET_PLAYER, PLAYER_SPEED, GOD_MODE
+from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT, PLAYER_TARGET_RANGE, ENEMY_TARGET_PLAYER, PLAYER_SPEED
 from math import sqrt
 from core import logic
 
@@ -55,7 +55,7 @@ class Enemy:
             w.deleteObject(self.image)
             d_print("[Enemy Event] Enemy Deleted")
 
-        if logic.is_collided(self, w.getPosition(self.image), w.getPosition(w.data.player)) and GOD_MODE != True:
+        if logic.is_collided(self, w.getPosition(self.image), w.getPosition(w.data.player)) and config.god_mode != True:
             w.showObject(w.data.game_over)
             w.hideObject(w.data.player)
             w.raiseObject(w.data.game_over)

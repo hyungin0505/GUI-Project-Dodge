@@ -1,8 +1,7 @@
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 800
 
-DEBUGGING = True
-GOD_MODE = False
+DEBUGGING = False
 
 ENEMY_TARGET_PLAYER = False
 PLAYER_TARGET_RANGE = 100
@@ -26,6 +25,7 @@ ENEMY_HEIGHT = 16
 COLLIDE_CORRECTION_VALUE = 3
 
 game_started = 0
+god_mode = False
 difficulty = 10
 enemy_count = 0
 enemy_spawn_tick = 1
