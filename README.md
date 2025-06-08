@@ -1,5 +1,5 @@
 # Dodge Game
-2025 중앙대학교 1학기 오픈소스SW와파이썬프로그래밍 03분반 기말 프로젝트 제출물입니다.   
+중앙대학교 2025학년도 1학기 오픈소스SW와파이썬프로그래밍 03분반 기말 프로젝트 제출물입니다.   
 
 ## 프로젝트 개요
 [강사님](https://www.youtube.com/@m.l)께서 수업 시간에 소개한 gui 모듈(`gui_core.py`)을 활용하여 간단한 gui 프로그램 만들기 
@@ -62,6 +62,17 @@
 
 각 파일 및 코드에 대한 설명은 해당 파일 내에 주석으로 작성하였습니다.  
 
+### 실행
+Python 3.13 버전 환경에서 제작되었습니다.
+```bash
+git clone https://github.com/hyungin0505/GUI-Project-Dodge.git
+```
+클론하거나 ZIP 파일을 다운로드하여 압축을 풀어주세요.  
+```bash
+python3 gui_project.py
+```
+`gui_project.py`를 실행하여 게임을 시작할 수 있습니다.  
+
 ### 조작
 - `W`, `A`, `S`, `D`
   - 상, 하, 좌, 우 방향 조작
@@ -76,11 +87,11 @@
 
 ### 리소스
 - `./assets/lgoo.png` 로고 이미지 [AI](https://www.design.com/) 생성
-- 이외 이미지 파일 [Piskel](https://www.piskelapp.com/)에서 생성
+- 이외 이미지들 [Piskel](https://www.piskelapp.com/)에서 제작
   - `./piskel` 디렉토리에 Player, Enemy, Background 프로젝트 파일
 
-### 게임 설정
-`./utls/config.py`에서 게임에 활용될 상수와 전역 변수 등을 관리합니다.  
+### 설정
+`./utls/config.py`에서 게임에서 사용될 상수와 전역 변수 등을 관리할 수 있습니다.   
 - 전체 화면 크기, 물체 가로 세로 길이 등 그래픽 관련 설정
 - Player 및 Enemy 속도, 난이도, Enemy 이동 방향, 보정치 등 인게임 로직 관련 설정  
 - `DEBUGGING` 활성화를 통해 디버깅에 필요한 정보 출력하는 함수 `d_print()` 함수 활용
