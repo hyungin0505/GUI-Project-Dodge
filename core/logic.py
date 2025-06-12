@@ -14,6 +14,7 @@ def is_collided(self, enemy, player):
             x1 + length1 > x2 and
             y1 < y2 + length2 and
             y1 + length1 > y2):
-        d_print("[Game Over] Player is collided with enemies")
+        if config.game_started == 1:
+            d_print("\033[94m[Game Over]\033[0m Player is collided with enemies")
         return True
     return False
