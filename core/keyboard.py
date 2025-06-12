@@ -5,11 +5,14 @@ from utils import config
 
 def esc_input(w):
     if w.keys['Escape']:
+        d_print("\033[93m[KeyBoard Input]\033[0mPressed 'Esc'")
+        d_print("\033[96mExit Program\033[0m")
         w.stop()
     return
 
 def enter_input(w):
     if w.keys['Return'] and config.game_started == 0:
+        d_print("\033[93m[KeyBoard Input]\033[0mPressed 'Enter'")
         game.init(w)
     return
 
