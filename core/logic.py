@@ -1,4 +1,5 @@
 from core.debugger import d_print
+from utils import config
 from utils.config import COLLIDE_CORRECTION_VALUE
 
 

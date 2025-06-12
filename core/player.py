@@ -12,26 +12,26 @@ def move(w):
             y = w.getPosition(w.data.player)[1]
             if y >= 0-PLAYER_HEIGHT/2:
                 y -= PLAYER_SPEED
-            d_print("[KeyBoard Input] Pressed 'w'.")
-            d_print("[Player Moved] Player is to ({}, {}).".format(x, y))
+            d_print("\033[93m[KeyBoard Input]\033[0m Pressed 'w'.")
+            d_print("\033[90m[Player Moved] Player is to ({}, {}).\033[0m".format(x, y))
         if w.keys['s'] and not w.keys['w']:
             y = w.getPosition(w.data.player)[1]
             if y <= SCREEN_HEIGHT-PLAYER_HEIGHT/2:
                 y += PLAYER_SPEED
-            d_print("[KeyBoard Input] Pressed 's'.")
-            d_print("[Player Moved] Player is to ({}, {}).".format(x, y))
+            d_print("\033[93m[KeyBoard Input]\033[0m Pressed 's'.")
+            d_print("\033[90m[Player Moved] Player is to ({}, {}).\033[0m".format(x, y))
         if w.keys['a'] and not w.keys['d']:
             x = w.getPosition(w.data.player)[0]
             if x >= 0-PLAYER_WIDTH/2:
                 x -= PLAYER_SPEED
-            d_print("[KeyBoard Input] Pressed 'a'.")
-            d_print("[Player Moved] Player is to ({}, {}).".format(x, y))
+            d_print("\033[93m[KeyBoard Input]\033[0m Pressed 'a'.")
+            d_print("\033[90m[Player Moved] Player is to ({}, {}).\033[0m".format(x, y))
         if w.keys['d'] and not w.keys['a']:
             x = w.getPosition(w.data.player)[0]
             if x <= SCREEN_WIDTH-PLAYER_WIDTH/2:
                 x += PLAYER_SPEED
-            d_print("[KeyBoard Input] Pressed 'd'.")
-            d_print("[Player Moved] Player is to ({}, {}).".format(x, y))
+            d_print("\033[93m[KeyBoard Input]\033[0m Pressed 'd'.")
+            d_print("\033[90m[Player Moved] Player is to ({}, {}).\033[0m".format(x, y))
 
         w.moveObject(w.data.player, new_x=x, new_y=y)
         keyboard.cheat_input(w)

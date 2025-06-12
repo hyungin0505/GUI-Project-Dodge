@@ -4,7 +4,7 @@ from utils import config
 
 def play(w):
     if w.mouse_buttons[1]:
-        d_print("Mouse 1 Clicked. ({}, {})".format(w.mouse_position_x, w.mouse_position_y))
+        d_print("\033[96mMouse 1 Clicked. ({}, {})\033[0m".format(w.mouse_position_x, w.mouse_position_y))
         if (w.getPosition(w.data.play_button)[0]
             <= w.mouse_position_x
             <= w.getPosition(w.data.play_button)[0] + w.getSize(w.data.play_button)[0]

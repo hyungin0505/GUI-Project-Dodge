@@ -24,7 +24,7 @@ class Enemy:
         elif edge == 'right':
             self.x = SCREEN_WIDTH
             self.y = random.randint(0-16, SCREEN_HEIGHT)
-        d_print("[Enemy Spawned] Enemy is on {}. ({}, {})".format(edge, self.x, self.y))
+        d_print("\033[92m[Enemy Spawned]\033[0m Enemy is on {}. ({}, {})".format(edge, self.x, self.y))
 
         self.image = w.newImage(
             x=self.x,
@@ -53,7 +53,7 @@ class Enemy:
         if -ENEMY_WIDTH > w.getPosition(self.image)[0] or w.getPosition(self.image)[0] > SCREEN_WIDTH + ENEMY_WIDTH or -ENEMY_HEIGHT > w.getPosition(self.image)[1] or w.getPosition(self.image)[1] > SCREEN_HEIGHT + ENEMY_HEIGHT:
             enemies.remove(self)
             w.deleteObject(self.image)
-            d_print("[Enemy Event] Enemy Deleted")
+            d_print("\033[92m[Enemy Event]\033[0m Enemy Deleted")
 
         if logic.is_collided(self, w.getPosition(self.image), w.getPosition(w.data.player)) and config.god_mode != True:
             w.showObject(w.data.game_over)

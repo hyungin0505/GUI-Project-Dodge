@@ -7,7 +7,7 @@ def init(w):
     w.hideObject(w.data.logo)
     config.game_started = 1
     w.showObject(w.data.player)
-    d_print("Game Play Started")
+    d_print("\033[96mGame Play Started\033[0m")
 
 def start(w, enemies):
     if config.game_started == 0 or config.game_started == 2:

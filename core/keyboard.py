@@ -15,10 +15,10 @@ def enter_input(w):
 
 def cheat_input(w):
     if w.keys['Slash'] and config.game_started == 1:
-        d_print("[KeyBoard Input] Pressed '/'")
+        d_print("\033[93m[KeyBoard Input]\033[0m Pressed '/'")
         if config.god_mode:
             config.god_mode = False
-            d_print("GOD mode off")
+            d_print("\033[31m[Mode Changed]\033[0mSet GOD mode Off")
         else:
             config.god_mode = True
-            d_print("GOD mode on")
+            d_print("\033[31m[Mode Changed]\033[0mSet GOD mode On")
