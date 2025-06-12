@@ -34,6 +34,7 @@ from scenes import main_screen
 from gui import player_sprite, game_over_sprite
 from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from core import game, keyboard, title
+from core.debugger import d_print
 
 w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 
@@ -43,6 +44,7 @@ def initialize(timestamp):
     '''
     global enemies
     enemies = []
+    d_print("\033[96mStart Program\033[0m")
     main_screen.init(w)
     player_sprite.init(w)
     game_over_sprite.init(w)
