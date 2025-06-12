@@ -11,7 +11,7 @@ import gui_core as gui
 from scenes import main_screen
 from gui import player_sprite, game_over_sprite
 from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT
-from core import game, keyboard
+from core import game, keyboard, title
 
 w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 
@@ -33,6 +33,7 @@ def update(timestamp):
     global enemies
     keyboard.esc_input(w)
     game.start(w, enemies)
+    title.isGod(w)
 
     pass
 
