@@ -28,4 +28,5 @@ game_started = 0
 god_mode = False
 difficulty = 10
 enemy_count = 0
-enemy_spawn_tick = 1
+enemy_spawn_tick = 0
+enemy_spawn_probability = 8
