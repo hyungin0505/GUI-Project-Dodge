@@ -11,7 +11,7 @@ def init(w):
 
 def start(w, enemies):
     if config.game_started == 0 or config.game_started == 2:
-        button.play(w)
+        button.is_clicked(w)
     else:
         player.move(w)
         enemy.generate(w, enemies)
