@@ -29,4 +29,4 @@ god_mode = False
 difficulty = 10
 enemy_count = 0
 enemy_spawn_tick = 0
-enemy_spawn_probability = 8
+enemy_spawn_probability = 8 # 10초 내에 난이도 증가 확인 가능하도록

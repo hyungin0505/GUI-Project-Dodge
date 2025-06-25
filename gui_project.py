@@ -36,11 +36,11 @@ from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT
 from core import game, keyboard, title
 from core.debugger import d_print
 
-w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
+w = gui.Window(width=SCREEN_WIDTH, height=SCREEN_HEIGHT, interval=1/120)
 
 def initialize(timestamp):
     '''
-
+    적절한 설명 메세지
     '''
     global enemies
     enemies = []
@@ -54,7 +54,7 @@ def initialize(timestamp):
 
 def update(timestamp):
     '''
-    여러 줄짜
+    여러 줄짜리
     설명 메시지
     '''
     global enemies
