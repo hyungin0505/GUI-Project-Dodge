@@ -17,11 +17,11 @@ def enter_input(w):
     return
 
 def cheat_input(w):
-    if w.keys['Slash'] and config.game_started == 1:
-        d_print("\033[93m[KeyBoard Input]\033[0m Pressed '/'")
-        if config.god_mode:
-            config.god_mode = False
-            d_print("\033[31m[Mode Changed]\033[0mSet GOD mode Off")
-        else:
-            config.god_mode = True
-            d_print("\033[31m[Mode Changed]\033[0mSet GOD mode On")
+    if w.keys['Period'] and config.game_started == 1:
+        d_print("\033[93m[KeyBoard Input]\033[0m Pressed '.'")
+        config.god_mode = False
+        d_print("\033[31m[Mode Changed]\033[0mSet GOD mode Off")
+    if w.keys['Comma'] and config.game_started == 1:
+        d_print("\033[93m[KeyBoard Input]\033[0m Pressed ','")
+        config.god_mode = True
+        d_print("\033[31m[Mode Changed]\033[0mSet GOD mode On")

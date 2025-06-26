@@ -85,8 +85,10 @@ python3 gui_project.py
   - 언제든 게임 종료 (프로그램 종료)
 - `Enter`
   - 메인 화면에서 게임 시작 버튼 클릭과 동일한 기능
-- `/`
+- `, (Comma)`
   - 인게임 중 치트 활성화 (무적 모드)
+- `. (Period)`
+  - 인게임 중 치트 비활성화 (일반 모드)
 
 ### 리소스
 - `./assets/lgoo.png` 로고 이미지 [AI](https://www.design.com/) 생성
