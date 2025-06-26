@@ -32,8 +32,8 @@ def generate(w, enemies):
         config.enemy_count += 1
 
     if config.enemy_count >= config.difficulty:
-        if config.enemy_spawn_tick < config.enemy_spawn_probability - 1:
+        if config.enemy_spawn_tick < config.enemy_spawn_probability - 5:
             config.enemy_spawn_tick += 1
-        config.difficulty *= 1.8
+        config.difficulty *= 1.05
 
         d_print("\033[91m[Game Config Update]\033[0m Enemy Spawn Tick: {} Difficulty: {}".format(config.enemy_spawn_tick, config.difficulty))

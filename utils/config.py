@@ -17,10 +17,11 @@ GAME_OVER_HEIGHT = 128
 
 PLAYER_WIDTH = 32
 PLAYER_HEIGHT = 32
-PLAYER_SPEED = 8
+PLAYER_SPEED = 1.2
 
 ENEMY_WIDTH = 16
 ENEMY_HEIGHT = 16
+ENEMY_SPEED = 1.35
 
 COLLIDE_CORRECTION_VALUE = 3
 
@@ -29,4 +30,4 @@ god_mode = False
 difficulty = 10
 enemy_count = 0
 enemy_spawn_tick = 0
-enemy_spawn_probability = 8 # 10초 내에 난이도 증가 확인 가능하도록
+enemy_spawn_probability = 50

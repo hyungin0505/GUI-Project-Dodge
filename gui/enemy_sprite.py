@@ -1,12 +1,12 @@
 import random
 from utils import config
 from core.debugger import d_print
-from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT, PLAYER_TARGET_RANGE, ENEMY_TARGET_PLAYER, PLAYER_SPEED
+from utils.config import SCREEN_WIDTH, SCREEN_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT, PLAYER_TARGET_RANGE, ENEMY_TARGET_PLAYER, ENEMY_SPEED
 from math import sqrt
 from core import logic
 
 class Enemy:
-    def __init__(self, w, x=0, y=0, speed=config.PLAYER_SPEED):
+    def __init__(self, w, x=0, y=0, speed=config.ENEMY_SPEED):
         self.x = x
         self.y = y
         self.speed = speed
@@ -41,8 +41,8 @@ class Enemy:
         dy = w.getPosition(w.data.player)[1] - w.getPosition(self.image)[1] + target_offset
 
         distance = sqrt(dx * dx + dy * dy)
-        self.speed_x = (dx/distance)*PLAYER_SPEED
-        self.speed_y = (dy/distance)*PLAYER_SPEED
+        self.speed_x = (dx/distance)*ENEMY_SPEED
+        self.speed_y = (dy/distance)*ENEMY_SPEED
 
     def move(self, w, enemies):
         new_x = w.getPosition(self.image)[0] + self.speed_x
