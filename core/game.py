@@ -1,4 +1,4 @@
-from core import player, enemy, button
+from core import player, enemy, button, title
 from core.debugger import d_print
 from utils import config
 
@@ -17,3 +17,4 @@ def start(w, enemies):
         enemy.generate(w, enemies)
     for e in enemies:
             e.move(w, enemies)
+    title.isGod(w)
